@@ -140,10 +140,17 @@ class Pipeline:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--config", type=str, default="pix_configs/pix512_exrope_samjdbdalle_qwen3_1.7b_pixddt_txtadalnrefiner_mixed.yaml")
+    parser.add_argument("--config", type=str, default="configs_t2i/inference_heavydecoder.yaml")
     parser.add_argument("--resolution", type=int, default=512)
+    parser.add_argument("--model_id", type=str, default="MCG-NJU/PixNerd-XXL-P16-T2I")
     parser.add_argument("--ckpt_path", type=str, default="models")
+
     args = parser.parse_args()
+    if not os.path.exists(args.ckpt_path):
+        snapshot_download(repo_id=args.model_id, local_dir=args.ckpt_path)
+        ckpt_path = os.path.join(args.ckpt_path, "model.ckpt")
+    else:
+        ckpt_path = args.ckpt_path
 
     config = OmegaConf.load(args.config)
     vae_config = config.model.vae
@@ -155,8 +162,7 @@ if __name__ == "__main__":
     conditioner = instantiate_class(conditioner_config)
 
 
-
-    ckpt = torch.load(args.ckpt_path, map_location="cpu")
+    ckpt = torch.load(ckpt_path, map_location="cpu")
     denoiser = load_model(ckpt, denoiser)
     denoiser = denoiser.cuda()
     vae = vae.cuda()
