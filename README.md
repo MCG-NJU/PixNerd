@@ -19,19 +19,18 @@ We propose PixNerd, a powerful and efficient **pixel-space** diffusion transform
 ![](./figs/pixelnerd_teaser.png)
 ![](./figs/pixnerd_multires.png)
 ## Checkpoints
-We take the off-shelf [VAE](https://huggingface.co/stabilityai/sd-vae-ft-ema) to encode image into latent space, and train the decoder with DDT.
 
-| Dataset       | Model         | Params | FID   | HuggingFace                                              |
-|---------------|---------------|--------|-------|----------------------------------------------------------|
-| ImageNet256   | PixNerd-XL/16 | 700M   | 2.15  | [🤗](https://huggingface.co/MCG-NJU/DDT-XL-22en6de-R256) |
-| ImageNet512   | PixNerd-XL/16 | 700M   | 2.84  | [🤗](https://huggingface.co/MCG-NJU/DDT-XL-22en6de-R512) |
+| Dataset       | Model         | Params | FID   | HuggingFace                           |
+|---------------|---------------|--------|-------|---------------------------------------|
+| ImageNet256   | PixNerd-XL/16 | 700M   | 2.15  | [🤗](https://huggingface.co/MCG-NJU/PixNerd-XL-16) |
+| ImageNet512   | PixNerd-XL/16 | 700M   | 2.84  | [🤗](https://huggingface.co/MCG-NJU/PixNerd-XL-16) |
 
 | Dataset       | Model         | Params | GenEval | DPG  | HuggingFace                                              |
 |---------------|---------------|--------|------|------|----------------------------------------------------------|
-| Text-to-Image | PixNerd-XXL/16| 1.2B | 0.73 | 80.9 | [🤗](https://huggingface.co/MCG-NJU/DDT-XL-22en6de-R512) |
+| Text-to-Image | PixNerd-XXL/16| 1.2B | 0.73 | 80.9 | [🤗](https://huggingface.co/MCG-NJU/PixNerd-XXL-16) |
 ## Online Demos
 ![](./figs/demo.png)
-We provide online demos for DDT-XL/2(22en6de) on HuggingFace Spaces.
+We provide online demos for PixNerd-XXL/16(text-to-image) on HuggingFace Spaces.
 
 HF spaces: [https://huggingface.co/spaces/MCG-NJU/PixNerd](https://huggingface.co/spaces/MCG-NJU/PixNerd)
 
