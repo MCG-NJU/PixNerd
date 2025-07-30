@@ -41,7 +41,7 @@ model:
   vae:
     class_path: src.models.autoencoder.pixel.PixelAE
   denoiser:
-    class_path: src.models.transformer.pixnerd.PixNerDiT
+    class_path: src.models.transformer.pixnerd_t2i.PixNerDiT
     init_args:
       in_channels: 3
       patch_size: 16
