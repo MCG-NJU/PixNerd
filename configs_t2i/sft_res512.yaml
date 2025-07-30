@@ -56,7 +56,7 @@ model:
   conditioner:
     class_path: src.models.conditioner.qwen3_text_encoder.Qwen3TextEncoder
     init_args:
-      weight_path: /mnt/bn/wangshuai6/models/Qwen3-1.7B
+      weight_path: Qwen/Qwen3-1.7B
       embed_dim: *txt_embed_dim
       max_length: 128
   diffusion_trainer:
