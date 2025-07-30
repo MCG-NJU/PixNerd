@@ -2,7 +2,6 @@ import time
 
 import torch
 import torch.nn as nn
-from sympy.strategies.branch import condition
 
 
 class BaseTrainer(nn.Module):

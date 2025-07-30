@@ -2,7 +2,6 @@ from typing import Dict, Any, Optional
 
 import torch
 import torch.nn as nn
-from lightning.fabric.utilities.types import _PATH
 
 
 import logging

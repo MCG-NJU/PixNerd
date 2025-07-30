@@ -3,7 +3,6 @@ from typing import Optional, Dict, Any
 
 import lightning.pytorch as pl
 from lightning.pytorch.callbacks.model_checkpoint import ModelCheckpoint
-from soupsieve.util import lower
 
 
 class CheckpointHook(ModelCheckpoint):

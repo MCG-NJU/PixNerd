@@ -4,8 +4,6 @@ from lightning.pytorch import Callback
 
 import os.path
 import numpy
-import json
-from PIL import Image
 from typing import Sequence, Any, Dict
 from concurrent.futures import ThreadPoolExecutor
 
