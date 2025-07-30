@@ -1,7 +1,7 @@
 # PixNerd: Pixel Neural Field Diffusion
 <div style="text-align: center;">
   <a href="https://arxiv.org/abs/2504.05741"><img src="https://img.shields.io/badge/arXiv-2504.05741-b31b1b.svg" alt="arXiv"></a>
-    <a href="https://huggingface.co/spaces/MCG-NJU/DDT"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Online_Demo-green" alt="arXiv"></a>  
+    <a href="https://huggingface.co/spaces/MCG-NJU/PixNerd"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Online_Demo-green" alt="arXiv"></a>  
 </div>
 
 ![](./figs/arch.png)
