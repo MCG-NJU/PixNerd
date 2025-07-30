@@ -1,20 +1,11 @@
 lightning==2.5.0.post0
 omegaconf==2.3.0
-jsonargparse[signatures]>=4.27.7
-# huggingface_hub==0.29.3
+torch==2.5.0
 diffusers==0.30.0
-accelerate==1.5.2
-transformers==4.51.3
-pydantic==1.10.9
+jsonargparse[signatures]>=4.27.7
+torchvision
+timm
+accelerate
+gradio
 
-# recaption
-# lmdeploy
-# transformers==4.50.0
-# qwen_vl_utils
-# pip3 install lmdeploy transformers==4.50.0 qwen_vl_utils
 
-# GenEval
-# mmdet==3.3.0
-# mmcv==2.1.0
-# open-clip-torch==2.20.0
-# clip_benchmark
