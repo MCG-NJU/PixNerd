@@ -31,7 +31,7 @@ We propose PixNerd, a powerful and efficient **pixel-space** diffusion transform
 ## Online Demos
 ![](./figs/demo.png)
 We provide online demos for PixNerd-XXL/16(text-to-image) on HuggingFace Spaces.
-
+强烈建议本地部署玩玩，线上的模型推理速度会慢一些。以及因为这个我把任意分辨率和动画都关了。
 HF spaces: [https://huggingface.co/spaces/MCG-NJU/PixNerd](https://huggingface.co/spaces/MCG-NJU/PixNerd)
 
 To host the local gradio demo, run the following command:
