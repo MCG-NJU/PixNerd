@@ -25,9 +25,9 @@ We propose PixNerd, a powerful and efficient **pixel-space** diffusion transform
 | ImageNet256   | PixNerd-XL/16 | 700M   | 2.15  | [🤗](https://huggingface.co/MCG-NJU/PixNerd-XL-P16-C2I) |
 | ImageNet512   | PixNerd-XL/16 | 700M   | 2.84  | [🤗](https://huggingface.co/MCG-NJU/PixNerd-XL-P16-C2I) |
 
-| Dataset       | Model         | Params | GenEval | DPG  | HuggingFace                                             |
-|---------------|---------------|--------|------|------|---------------------------------------------------------|
-| Text-to-Image | PixNerd-XXL/16| 1.2B | 0.73 | 80.9 | [🤗](https://huggingface.co/MCG-NJU/PixNerd-XL-P16-T2I) |
+| Dataset       | Model         | Params | GenEval | DPG  | HuggingFace                                              |
+|---------------|---------------|--------|------|------|----------------------------------------------------------|
+| Text-to-Image | PixNerd-XXL/16| 1.2B | 0.73 | 80.9 | [🤗](https://huggingface.co/MCG-NJU/PixNerd-XXL-P16-T2I) |
 ## Online Demos
 ![](./figs/demo.png)
 We provide online demos for PixNerd-XXL/16(text-to-image) on HuggingFace Spaces.
