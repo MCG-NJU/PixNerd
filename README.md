@@ -1,6 +1,6 @@
 # PixNerd: Pixel Neural Field Diffusion
 <div style="text-align: center;">
-  <a href="https://arxiv.org/abs/2504.05741"><img src="https://img.shields.io/badge/arXiv-2504.05741-b31b1b.svg" alt="arXiv"></a>
+  <a href="http://arxiv.org/abs/2507.23268"><img src="https://img.shields.io/badge/arXiv-2507.23268-b31b1b.svg" alt="arXiv"></a>
     <a href="https://huggingface.co/spaces/MCG-NJU/PixNerd"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Online_Demo-green" alt="arXiv"></a>  
 </div>
 
@@ -65,11 +65,11 @@ For T2i, we use GenEval and DPG to collect metrics.
 
 ## Reference
 ```bibtex
-@article{wang2025ddt,
-  title={DDT: Decoupled Diffusion Transformer},
-  author={Wang, Shuai and Tian, Zhi and Huang, Weilin and Wang, Limin},
-  journal={arXiv preprint arXiv:2504.05741},
-  year={2025}
+@article{2507.23268,
+Author = {Shuai Wang and Ziteng Gao and Chenhui Zhu and Weilin Huang and Limin Wang},
+Title = {PixNerd: Pixel Neural Field Diffusion},
+Year = {2025},
+Eprint = {arXiv:2507.23268},
 }
 ```
 
