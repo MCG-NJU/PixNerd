@@ -8,6 +8,7 @@
 
 # Revision of the inference time statistics
 
+Deeply sorry for this mistake, the single-step inference time of SiT-L/2 and Baseline-L is missing a zero (0.097s vs 0.0097s). The single-step inference time of PixNerd and Baseline is close.
 ![image.png](https://cdn-uploads.huggingface.co/production/uploads/66615c855fd9d736e670e0a9/vEGp4Lthv9JDjDa8Gvyze.png)
 
 ## Introduction
