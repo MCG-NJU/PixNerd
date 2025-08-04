@@ -6,6 +6,9 @@
 
 ![](./figs/arch.png)
 
+# Revision of the inference time statistics
+
+![image.png](https://cdn-uploads.huggingface.co/production/uploads/66615c855fd9d736e670e0a9/vEGp4Lthv9JDjDa8Gvyze.png)
 
 ## Introduction
 We propose PixNerd, a powerful and efficient **pixel-space** diffusion transformer for image generation (without VAE). Different from conventional pixel diffusion models, we employ the neural field to improve the high frequercy modeling .
