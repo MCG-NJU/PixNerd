@@ -73,4 +73,4 @@ Eprint = {arXiv:2507.23268},
 ```
 
 ## Acknowledgement
-The code is mainly built upon [FlowDCN](https://github.com/MCG-NJU/DDT) and [DDT](https://github.com/MCG-NJU/FlowDCN).
+The code is mainly built upon [FlowDCN](https://github.com/MCG-NJU/FlowDCN) and [DDT](https://github.com/MCG-NJU/DDT).
