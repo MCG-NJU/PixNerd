@@ -32,7 +32,7 @@ trainer:
         save_last: true
     - class_path: src.callbacks.save_images.SaveImagesHook
       init_args:
-         save_dir: 1600k_ode250_cfg3.0_inteval0.1
+         save_dir: val
          save_compressed: true
   plugins:
     - src.plugins.bd_env.BDEnvironment
