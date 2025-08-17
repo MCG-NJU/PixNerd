@@ -78,7 +78,6 @@ model:
       guidance_interval_min: 0.1
       guidance_interval_max: 1.0
       scheduler: *scheduler
-      last_step: 0.04
       w_scheduler: src.diffusion.flow_matching.scheduling.LinearScheduler
       guidance_fn: src.diffusion.base.guidance.simple_guidance_fn
       step_fn: src.diffusion.flow_matching.sampling.ode_step_fn
