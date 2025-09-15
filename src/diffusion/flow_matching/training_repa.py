@@ -69,7 +69,7 @@ class REPATrainer(BaseTrainer):
             base_t = torch.randn((batch_size), device=x.device, dtype=torch.float32).sigmoid()
         else:
             base_t = torch.rand((batch_size), device=x.device, dtype=torch.float32)
-        t = time_shift_fn(base_t, self.timeshift).to(x.dtype)
+        t = time_shift_fn(base_t, self.timeshift) #.to(x.dtype)
         noise = torch.randn_like(x)
         alpha = self.scheduler.alpha(t)
         dalpha = self.scheduler.dalpha(t)
@@ -96,7 +96,6 @@ class REPATrainer(BaseTrainer):
 
         with torch.no_grad():
             dst_feature = self.encoder(raw_images)
-
         if dst_feature.shape[1] != src_feature.shape[1]:
             src_feature = src_feature[:, :dst_feature.shape[1]]
 
@@ -106,12 +105,12 @@ class REPATrainer(BaseTrainer):
 
         weight = self.loss_weight_fn(alpha, sigma)
         fm_loss = weight*(out - v_t)**2
-
         out = dict(
             fm_loss=fm_loss.mean(),
             cos_loss=cos_loss.mean(),
             loss=fm_loss.mean() + self.feat_loss_weight*cos_loss.mean(),
         )
+
         return out
 
     def state_dict(self, *args, destination=None, prefix="", keep_vars=False):
