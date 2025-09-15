@@ -89,10 +89,12 @@ class DataModule(pl.LightningDataModule):
         else:
             dataloader_batch_size = self.train_batch_size
             train_collate_fn = collate_fn
+        global_rank = self.trainer.global_rank
+        world_size = self.trainer.world_size
 
         # build dataloader sampler
         if not isinstance(self.train_dataset, IterableDataset):
-            sampler = torch.utils.data.distributed.DistributedSampler(self.train_dataset)
+            sampler = torch.utils.data.distributed.DistributedSampler(self.train_dataset, num_replicas=world_size, rank=global_rank)
         else:
             sampler = None
 
