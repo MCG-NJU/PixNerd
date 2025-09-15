@@ -10,11 +10,11 @@ class BaseAE(torch.nn.Module):
 
     @torch.autocast("cuda", dtype=torch.bfloat16)
     def encode(self, x):
-        return self._impl_encode(x).to(torch.bfloat16)
+        return self._impl_encode(x) #.to(torch.bfloat16)
 
-    @torch.autocast("cuda", dtype=torch.bfloat16)
+    # @torch.autocast("cuda", dtype=torch.bfloat16)
     def decode(self, x):
-        return self._impl_decode(x).to(torch.bfloat16)
+        return self._impl_decode(x) #.to(torch.bfloat16)
 
     def _impl_encode(self, x):
         raise NotImplementedError
