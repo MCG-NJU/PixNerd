@@ -6,11 +6,10 @@
 
 ![](./figs/arch.png)
 
-
 ## Introduction
 We propose PixNerd, a powerful and efficient **pixel-space** diffusion transformer for image generation (without VAE). Different from conventional pixel diffusion models, we employ the neural field to improve the high frequercy modeling .
 
-* We achieve **2.15 FID** on ImageNet256x256 Benchmark with PixNerd-XL/16.
+* We achieve **1.93 FID** on ImageNet256x256 Benchmark with PixNerd-XL/16 (1600k training steps).
 * We achieve **2.84 FID** on ImageNet512x512 Benchmark with PixNerd-XL/16.
 * We achieve **0.73 overall score** on GenEval Benchmark with PixNerd-XXL/16.
 * We achieve **80.9 avergae score** on DPG Benchmark with PixNerd-XXL/16.
@@ -22,7 +21,7 @@ We propose PixNerd, a powerful and efficient **pixel-space** diffusion transform
 
 | Dataset       | Model         | Params | FID   | HuggingFace                           |
 |---------------|---------------|--------|-------|---------------------------------------|
-| ImageNet256   | PixNerd-XL/16 | 700M   | 2.15  | [🤗](https://huggingface.co/MCG-NJU/PixNerd-XL-P16-C2I) |
+| ImageNet256   | PixNerd-XL/16 | 700M   | 1.93  | [🤗](https://huggingface.co/MCG-NJU/PixNerd-XL-P16-C2I) |
 | ImageNet512   | PixNerd-XL/16 | 700M   | 2.84  | [🤗](https://huggingface.co/MCG-NJU/PixNerd-XL-P16-C2I) |
 
 | Dataset       | Model         | Params | GenEval | DPG  | HuggingFace                                              |
@@ -74,4 +73,4 @@ Eprint = {arXiv:2507.23268},
 ```
 
 ## Acknowledgement
-The code is mainly built upon [FlowDCN](https://github.com/MCG-NJU/DDT) and [DDT](https://github.com/MCG-NJU/FlowDCN).
+The code is mainly built upon [FlowDCN](https://github.com/MCG-NJU/FlowDCN) and [DDT](https://github.com/MCG-NJU/DDT).

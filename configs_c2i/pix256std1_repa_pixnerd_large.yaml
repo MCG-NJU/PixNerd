@@ -32,7 +32,7 @@ trainer:
         save_last: true
     - class_path: src.callbacks.save_images.SaveImagesHook
       init_args:
-         save_dir: 1600k_ode100_cfg3.0_inteval0.1
+         save_dir: val
          save_compressed: true
   plugins:
     - src.plugins.bd_env.BDEnvironment
@@ -74,11 +74,10 @@ model:
     class_path: src.diffusion.flow_matching.sampling.EulerSampler
     init_args:
       num_steps: 100
-      guidance: 3.0
+      guidance: 3.5
       guidance_interval_min: 0.1
       guidance_interval_max: 1.0
       scheduler: *scheduler
-      last_step: 0.04
       w_scheduler: src.diffusion.flow_matching.scheduling.LinearScheduler
       guidance_fn: src.diffusion.base.guidance.simple_guidance_fn
       step_fn: src.diffusion.flow_matching.sampling.ode_step_fn
