@@ -26,7 +26,7 @@ class DINOv2(nn.Module):
             source="local",
             skip_validation=True
         )
-        self.encoder = self.encoder.to(torch.bfloat16)
+        # self.encoder = self.encoder.to(torch.bfloat16)
         self.pos_embed = copy.deepcopy(self.encoder.pos_embed)
         self.encoder.head = torch.nn.Identity()
         self.patch_size = self.encoder.patch_embed.patch_size
@@ -34,15 +34,14 @@ class DINOv2(nn.Module):
         self.base_patch_size = base_patch_size
         self.encoder.compile()
 
-    @torch.autocast(device_type='cuda', dtype=torch.bfloat16)
     def forward(self, x, resize=True):
         b, c, h, w = x.shape
         x = Normalize(IMAGENET_DEFAULT_MEAN, IMAGENET_DEFAULT_STD)(x)
         if resize:
             x = torch.nn.functional.interpolate(x, (int(14*h/self.base_patch_size), int(14*w/self.base_patch_size)), mode='bicubic')
         feature = self.encoder.forward_features(x)['x_norm_patchtokens']
-        feature = feature.to(torch.bfloat16)
         return feature
+
 
 from transformers import CLIPModel, CLIPTokenizer
 class CLIP(nn.Module):
