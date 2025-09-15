@@ -6,17 +6,34 @@ from torchvision.transforms.functional import to_tensor
 from torchvision.transforms import Normalize
 from functools import partial
 
-def center_crop_fn(image, height, width):
-    crop_x = (image.width - width) // 2
-    crop_y = (image.height - height) // 2
-    return image.crop((crop_x, crop_y, crop_x + width, crop_y + height))
+import numpy as np
+
+def center_crop_fn(pil_image, image_size):
+    """
+    Center cropping implementation from ADM.
+    https://github.com/openai/guided-diffusion/blob/8fb3ad9197f16bbc40620447b2742e13458d2831/guided_diffusion/image_datasets.py#L126
+    """
+    while min(*pil_image.size) >= 2 * image_size:
+        pil_image = pil_image.resize(
+            tuple(x // 2 for x in pil_image.size), resample=Image.BOX
+        )
+
+    scale = image_size / min(*pil_image.size)
+    pil_image = pil_image.resize(
+        tuple(round(x * scale) for x in pil_image.size), resample=Image.BICUBIC
+    )
+
+    arr = np.array(pil_image)
+    crop_y = (arr.shape[0] - image_size) // 2
+    crop_x = (arr.shape[1] - image_size) // 2
+    return Image.fromarray(arr[crop_y: crop_y + image_size, crop_x: crop_x + image_size])
 
 
 class LocalCachedDataset(ImageFolder):
     def __init__(self, root, resolution=256, cache_root=None):
         super().__init__(root)
         self.cache_root = cache_root
-        self.transform = partial(center_crop_fn, height=resolution, width=resolution)
+        self.transform = partial(center_crop_fn, image_size=resolution)
 
     def load_latent(self, latent_path):
         pk_data = torch.load(latent_path)
@@ -58,9 +75,8 @@ class PixImageNet(ImageFolder):
                 ]
             )
         else:
-            self.transform = partial(center_crop_fn, height=resolution, width=resolution)
+            self.transform = partial(center_crop_fn, image_size=resolution)
         self.normalize = Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])
-
 
     def __getitem__(self, idx: int):
         image_path, target = self.samples[idx]
