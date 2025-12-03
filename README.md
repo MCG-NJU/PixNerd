@@ -22,7 +22,7 @@ We propose PixNerd, a powerful and efficient **pixel-space** diffusion transform
 | Dataset       | Model         | Params | FID   | HuggingFace                           |
 |---------------|---------------|--------|-------|---------------------------------------|
 | ImageNet256   | PixNerd-XL/16 | 700M   | 1.93  | [🤗](https://huggingface.co/MCG-NJU/PixNerd-XL-P16-C2I) |
-| ImageNet512   | PixNerd-XL/16 | 700M   | 2.84  | [🤗](https://huggingface.co/MCG-NJU/PixNerd-XL-P16-C2I) |
+| ImageNet512(FT from 256 for 200K steps)   | PixNerd-XL/16 | 700M   | 2.42  | [🤗](https://huggingface.co/MCG-NJU/PixNerd-XL-P16-C2I/blob/main/res512_ft200k_epoch%3D325-step%3D1800000_emainit.ckpt) |
 
 | Dataset       | Model         | Params | GenEval | DPG  | HuggingFace                                              |
 |---------------|---------------|--------|------|------|----------------------------------------------------------|
